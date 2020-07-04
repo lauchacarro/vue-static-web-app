@@ -9,6 +9,11 @@ export default {
     return {
       value: "World"
     };
-  }
+  },
+  created() {
+    fetch("api/api-pre-demo?name=Lautaro")
+        .then(json => json.json())
+        .then(obj => (this.value = obj.name));
+  },
 };
 </script>
